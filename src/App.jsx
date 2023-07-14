@@ -82,8 +82,8 @@ function App() {
       console.log(response);
       if (response.data.status_code == 200) {
         setVouchers(response.data.datas);
+        toast.dismiss();
         Toast("Berhasil Membatalkan pesanan");
-        toast.dismiss()
       } else {
         Toast("Gagal Membatalkan pesanan");
       }
@@ -105,9 +105,7 @@ function App() {
         data
       );
       if (response.data.status_code == 200) {
-        ToastOrder("Behasil memesan", () =>
-          handleCancel(response.data.id)
-        );
+        ToastOrder("Behasil memesan", () => handleCancel(response.data.id));
         Normalisasi(Toast);
       } else {
         Toast("Gagal memesan");
@@ -240,7 +238,12 @@ function App() {
           </Drawer>
         </div>
       </div>
-      <Toaster position="top-right" />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 1000,
+        }}
+      />
     </>
   );
 }
