@@ -151,7 +151,7 @@ function App() {
 
           <Drawer isOpen={open} setIsOpen={setOpen}>
             {Boolean(cart.length) && (
-              <div className="font-extrabold text-lg">List Keranjang</div>
+              <div className="font-extrabold text-lg my-2">List Keranjang</div>
             )}
 
             {!cart.length && (
@@ -206,7 +206,7 @@ function App() {
                 </div>
 
                 {Boolean(vouchers) && (
-                  <div className="relative">
+                  <div className="relative flex flex-col gap-2">
                     <div className="font-medium text-sm">
                       List Voucher digunakan
                     </div>
