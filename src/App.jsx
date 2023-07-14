@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import MenuCard from "./components/MenuCard";
 import Drawer from "./components/Drawer";
 import Button from "./components/Button";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Toast from "./components/Toast";
 import ToastOrder from "./components/ToastOrder";
 
@@ -83,6 +83,7 @@ function App() {
       if (response.data.status_code == 200) {
         setVouchers(response.data.datas);
         Toast("Berhasil Membatalkan pesanan");
+        toast.dismiss()
       } else {
         Toast("Gagal Membatalkan pesanan");
       }
@@ -107,7 +108,7 @@ function App() {
         ToastOrder("Behasil memesan", () =>
           handleCancel(response.data.id)
         );
-        Normalisasi();
+        Normalisasi(Toast);
       } else {
         Toast("Gagal memesan");
       }
