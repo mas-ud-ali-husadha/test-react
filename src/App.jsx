@@ -56,7 +56,7 @@ function App() {
         setVouchers(response.data.datas);
         Toast("Voucher digunakan");
       } else {
-        Toast("Voucher tidak ditemukan");
+        Toast("Voucher tidak ditemukan", "error");
       }
     } catch (error) {
       console.error(error);
@@ -85,7 +85,7 @@ function App() {
         toast.dismiss();
         Toast("Berhasil Membatalkan pesanan");
       } else {
-        Toast("Gagal Membatalkan pesanan");
+        Toast("Gagal Membatalkan pesanan", "error");
       }
     } catch (error) {
       console.error(error);
@@ -108,7 +108,7 @@ function App() {
         ToastOrder("Behasil memesan", () => handleCancel(response.data.id));
         Normalisasi(Toast);
       } else {
-        Toast("Gagal memesan");
+        Toast("Gagal memesan", "error");
       }
     } catch (error) {
       console.error(error);
@@ -241,7 +241,7 @@ function App() {
       <Toaster
         position="top-right"
         toastOptions={{
-          duration: 1000,
+          duration: 5000,
         }}
       />
     </>
