@@ -1,0 +1,60 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  mode: "jit",
+  darkMode: "class",
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    fontFamily: {
+      sans: [
+        "Poppins",
+        "ui-sans-serif",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        '"Noto Sans"',
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      serif: [
+        "ui-serif",
+        "Georgia",
+        "Cambria",
+        '"Times New Roman"',
+        "Times",
+        "serif",
+      ],
+      mono: [
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "Monaco",
+        "Consolas",
+        '"Liberation Mono"',
+        '"Courier New"',
+        "monospace",
+      ],
+    },
+    screens: {
+      xs: "576",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
+    extend: {
+      colors: {
+        primary: "#1E1E1E",
+        bgPrimary: "#F8F8FB",
+      },
+    },
+  },
+  plugins: [],
+};
