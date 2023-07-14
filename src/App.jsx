@@ -36,6 +36,15 @@ function App() {
     setCart(copy);
   };
 
+  const removeItem = (id) => {
+    const copy = [...cart];
+    const findIndex = copy.findIndex((i) => i.id == id);
+    if (findIndex >= 0) {
+      copy.splice(findIndex, 1);
+    }
+    setCart(copy);
+  };
+
   const handleChangeCatatan = (e, i) => {
     const copy = [...cart];
     copy[i].catatan = e.target.value;
@@ -161,7 +170,7 @@ function App() {
             {cart.map((item, i) => (
               <div
                 key={item.id}
-                className="flex gap-5 border rounded p-1 px-3 items-center"
+                className="flex gap-5 border rounded p-1 px-3 items-center relative"
               >
                 <img
                   className="h-16 w-16 object-contain"
@@ -183,6 +192,12 @@ function App() {
                     onChange={(e) => handleChangeCatatan(e, i)}
                     defaultValue={item.catatan}
                   />
+                </div>
+                <div
+                  onClick={() => removeItem(item.id)}
+                  className="absolute cursor-pointer text-white bg-slate-500 -top-2 -right-2 p-1 h-6 w-6 rounded-full text-center text-xs"
+                >
+                  X
                 </div>
               </div>
             ))}
